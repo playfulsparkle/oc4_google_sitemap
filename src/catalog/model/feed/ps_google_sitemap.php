@@ -28,11 +28,25 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Model
         return $product_data;
     }
 
-    public function getImages(int $product_id): array
+    public function getProductImages(array $data, int $max_images = 10): array
     {
-        $query = $this->db->query("SELECT `image` FROM `" . DB_PREFIX . "product_image` WHERE `product_id` = '" . (int) $product_id . "' LIMIT 10");
+        $query = $this->db->query("SELECT `product_id`, `image` FROM `" . DB_PREFIX . "product_image` WHERE `product_id` IN ('" . implode("','", $data) . "')");
 
-        return $query->rows;
+        $result = [];
+
+        foreach ($query->rows as $row) {
+            $product_id = (int) $row['product_id'];
+
+            if (!isset($result[$product_id])) {
+                $result[$product_id] = [];
+            }
+
+            if (count($result[$product_id]) < $max_images) {
+                $result[$product_id][] = $row;
+            }
+        }
+
+        return $result;
     }
 
 

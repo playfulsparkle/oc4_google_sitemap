@@ -3,7 +3,7 @@
     "description": "Generate SEO-friendly, customizable XML sitemaps for better search engine indexing, with multi-store and multi-language support for improved visibility.",
     "code": "ps_google_sitemap",
     "license": "GPL",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "author": "Playful Sparkle",
     "link": "https://github.com/playfulsparkle/oc4_google_sitemap.git"
   }

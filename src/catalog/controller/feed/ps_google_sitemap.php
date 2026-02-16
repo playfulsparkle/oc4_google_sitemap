@@ -34,12 +34,10 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
 
         $languages = $this->model_localisation_language->getLanguages();
 
-        $language = $this->config->get('config_language');
-
-        if (isset($this->request->get['language']) && isset($languages[$this->request->get['language']])) {
-            $cur_language = $languages[$this->request->get['language']];
-
-            $language = $cur_language['code'];
+        if (isset($this->request->get['language']) && isset($languages[$this->request->get['language']]['code'])) {
+            $language = $languages[$this->request->get['language']]['code'];
+        } else {
+            $language = $this->config->get('config_language');
         }
 
 
@@ -78,6 +76,15 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
             // Fetch products in chunks to handle large datasets
             $products = $this->model_extension_ps_google_sitemap_feed_ps_google_sitemap->getProducts();
 
+            if ($sitemap_product_images && $sitemap_max_product_images > 1) {
+                $product_images = $this->model_extension_ps_google_sitemap_feed_ps_google_sitemap->getProductImages(
+                    array_column($products, 'product_id'),
+                    $sitemap_max_product_images
+                );
+            } else {
+                $product_images = [];
+            }
+
             foreach ($products as $product) {
                 $xml->startElement('url');
                 $product_url = $this->url->link('product/product', 'language=' . $language . '&product_id=' . $product['product_id']);
@@ -93,11 +100,8 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
                         $xml->endElement();
                     }
 
-                    if ($sitemap_max_product_images > 1) {
-                        $product_images = $this->model_extension_ps_google_sitemap_feed_ps_google_sitemap->getImages($product['product_id']);
-                        $product_images = array_slice($product_images, 0, $sitemap_max_product_images - 1);
-
-                        foreach ($product_images as $product_image) {
+                    if (isset($product_images[(int) $product['product_id']])) {
+                        foreach ($product_images[(int) $product['product_id']] as $product_image) {
                             $resized_image = !empty($product_image['image']) ? $this->model_tool_image->resize($product_image['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')) : null;
 
                             if ($resized_image) {
@@ -178,7 +182,7 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
 
                 foreach ($articles as $article) {
                     $xml->startElement('url');
-                    $article_url = $this->url->link('cms/blog', 'language=' . $language . '&topic_id=' . $topic['topic_id'] . '&article_id=' . $article['article_id']);
+                    $article_url = $this->url->link('cms/blog.info', 'language=' . $language . '&topic_id=' . $article['topic_id'] . '&article_id=' . $article['article_id']);
                     $xml->writeElement('loc', str_replace('&amp;', '&', $article_url));
                     $xml->endElement();
                 }
@@ -221,7 +225,7 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
 
             $xml->writeElement('loc', str_replace('&amp;', '&', $category_url));
 
-            if (version_compare(VERSION, '4.1.0.0', '<=')) {
+            if (isset($category['date_modified'])) {
                 $xml->writeElement('lastmod', date('Y-m-d\TH:i:sP', strtotime($category['date_modified'])));
             }
 
