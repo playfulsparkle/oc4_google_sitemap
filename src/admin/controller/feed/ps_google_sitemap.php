@@ -151,6 +151,8 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
             'SeznamBot' => 'SeznamBot',
         );
 
+        $data['config_seo_url'] = $this->config->get('config_seo_url');
+
         $data['text_contact'] = sprintf($this->language->get('text_contact'), self::EXTENSION_EMAIL, self::EXTENSION_EMAIL, self::EXTENSION_DOC);
 
         $data['header'] = $this->load->controller('common/header');
@@ -209,15 +211,13 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
      */
     public function install(): void
     {
-        if ($this->user->hasPermission('modify', 'extension/feed')) {
-            $this->load->model('setting/setting');
+        $this->load->model('setting/setting');
 
-            $data = [
-                'feed_ps_google_sitemap_max_product_images' => 1
-            ];
+        $data = [
+            'feed_ps_google_sitemap_max_product_images' => 1
+        ];
 
-            $this->model_setting_setting->editSetting('feed_ps_google_sitemap', $data);
-        }
+        $this->model_setting_setting->editSetting('feed_ps_google_sitemap', $data);
     }
 
     /**
@@ -239,13 +239,16 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
 
         $robotsTxt = dirname(DIR_SYSTEM) . '/robots.txt';
 
-        // Read the robots.txt file lines
-        $lines = file($robotsTxt);
+        if (is_readable($robotsTxt)) {
+            $lines = file($robotsTxt); // Read the robots.txt file lines
+        } else {
+            $lines = false;
+        }
 
         // If the file is not readable, assume no URLs are blocked
         if (false === $lines) {
             foreach ($urls as $url) {
-                $results[$url] = false; // No blocking when no robots.txt is found
+                $results[$url] = 'text_allowed'; // No blocking when no robots.txt is found
             }
             return $results;
         }
@@ -349,7 +352,6 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
         $store_url = HTTP_CATALOG;
 
         if (!$json) {
-
             $feed_seo_urls = [];
 
             $languages = $this->model_localisation_language->getLanguages();
@@ -358,8 +360,10 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
                 $feed_seo_urls[] = rtrim($store_url, '/') . '/index.php?route=extension/ps_google_sitemap/feed/ps_google_sitemap&language=' . $language['code'];
             }
 
-            foreach ($languages as $language) {
-                $feed_seo_urls[] = rtrim($store_url, '/') . '/' . $language['code'] . '/sitemap.xml';
+            if ($this->config->get('config_seo_url')) {
+                foreach ($languages as $language) {
+                    $feed_seo_urls[] = rtrim($store_url, '/') . '/' . $language['code'] . '/sitemap.xml';
+                }
             }
 
             $results = [];
@@ -383,8 +387,18 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
     {
         $htaccess_filename = dirname(DIR_SYSTEM) . '/.htaccess';
 
-        if (false === $lines = file($htaccess_filename)) {
+        if (!is_readable($htaccess_filename)) {
             return false;
+        }
+
+        $lines = file($htaccess_filename);
+
+        if (false === $lines) {
+            return false;
+        }
+
+        if (empty($lines)) {
+            return true;
         }
 
         $this->load->model('localisation/language');
@@ -415,9 +429,9 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
         foreach ($lines as $line) {
             $new_content .= $line;
 
-            if (trim($line) === 'RewriteEngine On' && !$foundRewriteEngine) {
+            if (!$foundRewriteEngine && strtolower(trim($line)) === 'rewriteengine on') {
                 $foundRewriteEngine = true;
-
+                $new_content .= PHP_EOL . PHP_EOL;
                 foreach ($rules as $rule) {
                     $new_content .= $rule . PHP_EOL;
                 }
