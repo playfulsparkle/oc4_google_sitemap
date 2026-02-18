@@ -214,8 +214,21 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
         $this->load->model('setting/setting');
 
         $data = [
-            'feed_ps_google_sitemap_max_product_images' => 1
+            'feed_ps_google_sitemap_category_images' => 0,
+            'feed_ps_google_sitemap_category' => 1,
+            'feed_ps_google_sitemap_information' => 1,
+            'feed_ps_google_sitemap_manufacturer_images' => 0,
+            'feed_ps_google_sitemap_manufacturer' => 1,
+            'feed_ps_google_sitemap_max_product_images' => 1,
+            'feed_ps_google_sitemap_product_images' => 1,
+            'feed_ps_google_sitemap_product' => 1,
+            'feed_ps_google_sitemap_status' => 0,
         ];
+
+        if (version_compare(VERSION, '4.1.0.0', '>=')) {
+            $data['feed_ps_google_sitemap_topic'] = 1;
+            $data['feed_ps_google_sitemap_article'] = 1;
+        }
 
         $this->model_setting_setting->editSetting('feed_ps_google_sitemap', $data);
     }
