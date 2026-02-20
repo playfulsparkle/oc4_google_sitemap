@@ -15,7 +15,7 @@ $_['text_success']                 = 'Успех: Вы успешно измен
 $_['text_htaccess_update_success'] = 'Успех: Файл .htaccess успешно обновлён.';
 $_['text_edit']                    = 'Редактировать Google Sitemap';
 $_['text_clear']                   = 'Очистить базу данных';
-$_['text_contact']                 = '<p>Для дополнительной помощи, пожалуйста, свяжитесь с нашей службой поддержки:</p><ul><li><strong>Контакт:</strong> <a href="mailto:%s">%s</a></li><li><strong>Документация:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Документация пользователя</a></li></ul>';
+$_['text_contact']                 = '<p>Для получения дополнительной помощи, пожалуйста, свяжитесь с нашей службой поддержки:</p><ul><li><strong>Контакт:</strong> <a href="mailto:%s">%s</a></li><li><strong>Документация:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Руководство пользователя</a></li></ul>';
 $_['text_user_agent_any']          = 'Любой пользовательский агент';
 $_['text_allowed']                 = 'Разрешено: %s';
 $_['text_disallowed']              = 'Запрещено: %s';

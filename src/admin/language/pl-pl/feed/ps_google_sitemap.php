@@ -15,7 +15,7 @@ $_['text_success']                 = 'Sukces: Zmodyfikowano plik Google Sitemap!
 $_['text_htaccess_update_success'] = 'Sukces: Plik .htaccess został pomyślnie zaktualizowany.';
 $_['text_edit']                    = 'Edytuj Mapę strony Google';
 $_['text_clear']                   = 'Wyczyść bazę danych';
-$_['text_contact']                 = '<p>W celu uzyskania dalszej pomocy prosimy o kontakt z naszym zespołem wsparcia:</p><ul><li><strong>Kontakt:</strong> <a href="mailto:%s">%s</a></li><li><strong>Dokumentacja:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Dokumentacja użytkownika</a></li></ul>';
+$_['text_contact']                 = '<p>W celu uzyskania dodatkowej pomocy prosimy o kontakt z zespołem wsparcia:</p><ul><li><strong>Kontakt:</strong> <a href="mailto:%s">%s</a></li><li><strong>Dokumentacja:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Dokumentacja użytkownika</a></li></ul>';
 $_['text_user_agent_any']          = 'Dowolny User Agent';
 $_['text_allowed']                 = 'Dozwolone: %s';
 $_['text_disallowed']              = 'Niedozwolone: %s';

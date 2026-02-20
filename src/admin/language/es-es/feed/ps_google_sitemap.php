@@ -14,7 +14,7 @@ $_['text_extension']               = 'Extensiones';
 $_['text_success']                 = 'Éxito: ¡Ha modificado el feed de Google Sitemap!';
 $_['text_edit']                    = 'Editar Google Sitemap';
 $_['text_clear']                   = 'Limpiar base de datos';
-$_['text_contact']                 = '<p>Para más asistencia, póngase en contacto con nuestro equipo de soporte:</p><ul><li><strong>Contacto:</strong> <a href="mailto:%s">%s</a></li><li><strong>Documentación:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Documentación para el usuario</a></li></ul>';
+$_['text_contact']                 = '<p>Para obtener más ayuda, por favor contacta a nuestro equipo de soporte:</p><ul><li><strong>Contacto:</strong> <a href="mailto:%s">%s</a></li><li><strong>Documentación:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Documentación para el Usuario</a></li></ul>';
 $_['text_user_agent_any']          = 'Cualquier agente de usuario';
 $_['text_allowed']                 = 'Permitido: %s';
 $_['text_disallowed']              = 'Prohibido: %s';

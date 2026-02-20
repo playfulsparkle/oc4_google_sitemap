@@ -15,7 +15,7 @@ $_['text_success']                 = 'Successo: Hai modificato il feed di Google
 $_['text_htaccess_update_success'] = 'Successo: Il file .htaccess è stato aggiornato con successo.';
 $_['text_edit']                    = 'Modifica Google Sitemap';
 $_['text_clear']                   = 'Pulisci il database';
-$_['text_contact']                 = '<p>Per ulteriore assistenza, contatta il nostro team di supporto:</p><ul><li><strong>Contatto:</strong> <a href="mailto:%s">%s</a></li><li><strong>Documentazione:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Documentazione utente</a></li></ul>';
+$_['text_contact']                 = '<p>Per ulteriore assistenza, contatta il nostro team di supporto:</p><ul><li><strong>Contatto:</strong> <a href="mailto:%s">%s</a></li><li><strong>Documentazione:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Documentazione Utente</a></li></ul>';
 $_['text_user_agent_any']          = 'Qualsiasi agente utente';
 $_['text_allowed']                 = 'Consentito: %s';
 $_['text_disallowed']              = 'Non consentito: %s';
