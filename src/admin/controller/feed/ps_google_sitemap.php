@@ -350,12 +350,6 @@ class PSGoogleSitemap extends \Opencart\System\Engine\Controller
 
         $this->load->model('localisation/language');
 
-        if (isset($this->request->get['store_id'])) {
-            $store_id = (int) $this->request->get['store_id'];
-        } else {
-            $store_id = 0;
-        }
-
         if (isset($this->request->get['user_agent'])) {
             $user_agent = $this->request->get['user_agent'];
         } else {
