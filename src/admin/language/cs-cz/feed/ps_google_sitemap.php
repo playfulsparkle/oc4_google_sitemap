@@ -15,7 +15,7 @@ $_['text_success']                 = 'Úspěch: Upravili jste Google Sitemap fee
 $_['text_htaccess_update_success'] = 'Úspěch: Soubor .htaccess byl úspěšně aktualizován.';
 $_['text_edit']                    = 'Upravit Google Sitemap';
 $_['text_clear']                   = 'Vymazat databázi';
-$_['text_contact']                 = '<p>Pro další pomoc se prosím obraťte na náš tým podpory:</p><ul><li><strong>Kontakt:</strong> <a href="mailto:%s">%s</a></li><li><strong>Dokumentace:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Dokumentace pro uživatele</a></li></ul>';
+$_['text_contact']                 = '<p>Pro další pomoc se prosím obraťte na náš tým podpory:</p><ul><li><strong>Webová stránka podpory:</strong> <a href="%1$s">%1$s</a></li><li><strong>GitHub repozitář:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>Kontaktovat podporu:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_user_agent_any']          = 'Jakýkoli uživatelský agent';
 $_['text_allowed']                 = 'Povoleno: %s';
 $_['text_disallowed']              = 'Zakázáno: %s';

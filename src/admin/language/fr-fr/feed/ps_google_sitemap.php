@@ -15,7 +15,7 @@ $_['text_success']                 = 'Succès : Vous avez modifié le flux Googl
 $_['text_htaccess_update_success'] = 'Succès : Le fichier .htaccess a été mis à jour avec succès.';
 $_['text_edit']                    = 'Modifier le Google Sitemap';
 $_['text_clear']                   = 'Effacer la base de données';
-$_['text_contact']                 = '<p>Pour toute assistance supplémentaire, veuillez contacter notre équipe de support :</p><ul><li><strong>Contact :</strong> <a href="mailto:%s">%s</a></li><li><strong>Documentation :</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Documentation utilisateur</a></li></ul>';
+$_['text_contact']                 = '<p>Pour toute assistance complémentaire, veuillez contacter notre équipe d’assistance :</p><ul><li><strong>Site Web d’assistance :</strong> <a href="%1$s">%1$s</a></li><li><strong>Dépôt GitHub :</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>Contacter l’assistance :</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_user_agent_any']          = 'Tout agent utilisateur';
 $_['text_allowed']                 = 'Autorisé : %s';
 $_['text_disallowed']              = 'Interdit : %s';

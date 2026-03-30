@@ -59,10 +59,10 @@ Features
   Español (es-es), and Türkçe (tr-tr).
 
 For more information, visit the extension's GitHub page
-at https://github.com/playfulsparkle/oc4_google_sitemap.git.
+at https://github.com/playfulsparkle/oc4_google_sitemap.
 
 Demo frontend: https://opencart4.playfulsparkle.com/
-Demo backend: https://opencart4.playfulsparkle.com/admin/
+Demo backend: https://opencart4.playfulsparkle.com/admin/index.php?route=common/login&username=demo&password=demo&redirect=https%3A%2F%2Fopencart4.playfulsparkle.com%2Fadmin%2Findex.php?route%3Dextension%2Fps_google_sitemap%2Ffeed%2Fps_google_sitemap
 
 Installation Instructions
 
@@ -80,5 +80,6 @@ Installation Instructions
 
 Support & Inquiries
 
-For assistance or inquiries related to this extension, please open an issue in
-the extension repository or contact us via email at support@playfulsparkle.com
+For assistance or inquiries related to this extension, please open an issue on
+this repository, visit our https://support.playfulsparkle.com support website,
+or contact us via email at support@playfulsparkle.com.

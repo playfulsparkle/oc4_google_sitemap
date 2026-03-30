@@ -15,7 +15,7 @@ $_['text_success']                 = 'موفقیت: شما فید سایت مپ 
 $_['text_htaccess_update_success'] = 'موفقیت: فایل .htaccess با موفقیت به‌روزرسانی شد.';
 $_['text_edit']                    = 'ویرایش سایت مپ گوگل';
 $_['text_clear']                   = 'پاکسازی پایگاه داده';
-$_['text_contact']                 = '<p>برای دریافت پشتیبانی بیشتر، با تیم پشتیبانی ما تماس بگیرید:</p><ul><li><strong>تماس:</strong> <a href="mailto:%s">%s</a></li><li><strong>مستندات:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">مستندات کاربر</a></li></ul>';
+$_['text_contact']                 = '<p>برای راهنمایی بیشتر، لطفاً با تیم پشتیبانی ما تماس بگیرید:</p><ul><li><strong>وب‌سایت پشتیبانی:</strong> <a href="%1$s">%1$s</a></li><li><strong>مخزن GitHub:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>تماس با پشتیبانی:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_user_agent_any']          = 'هر عامل کاربری';
 $_['text_allowed']                 = 'مجاز: %s';
 $_['text_disallowed']              = 'غیرمجاز: %s';

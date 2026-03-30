@@ -14,7 +14,7 @@ $_['text_success']                 = 'Успех: Променихте Google Si
 $_['text_htaccess_update_success'] = 'Успех: Файлът .htaccess беше успешно актуализиран.';
 $_['text_edit']                    = 'Редактиране на Google Sitemap';
 $_['text_clear']                   = 'Изчистване на базата данни';
-$_['text_contact']                 = '<p>За допълнително съдействие, моля, свържете се с нашия екип по поддръжка:</p><ul><li><strong>Контакт:</strong> <a href="mailto:%s">%s</a></li><li><strong>Документация:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Потребителска документация</a></li></ul>';
+$_['text_contact']                 = '<p>За допълнително съдействие, моля, свържете се с нашия екип за поддръжка:</p><ul><li><strong>Уебсайт за поддръжка:</strong> <a href="%1$s">%1$s</a></li><li><strong>GitHub хранилище:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>Контакт с поддръжката:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_user_agent_any']          = 'Всеки User Agent';
 $_['text_allowed']                 = 'Разрешено: %s';
 $_['text_disallowed']              = 'Забранено: %s';

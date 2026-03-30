@@ -15,7 +15,7 @@ $_['text_success']                 = 'Επιτυχία: Τροποποιήσατ
 $_['text_htaccess_update_success'] = 'Επιτυχία: Το αρχείο .htaccess ενημερώθηκε με επιτυχία.';
 $_['text_edit']                    = 'Επεξεργασία Χάρτη ιστοτόπου Google';
 $_['text_clear']                   = 'Εκκαθάριση Βάσης Δεδομένων';
-$_['text_contact']                 = '<p>Για περαιτέρω βοήθεια, επικοινωνήστε με την ομάδα υποστήριξής μας:</p><ul><li><strong>Επικοινωνία:</strong> <a href="mailto:%s">%s</a></li><li><strong>Τεκμηρίωση:</strong> <a href="%s" target="_blank" rel="noopener noreferrer">Τεκμηρίωση χρήστη</a></li></ul>';
+$_['text_contact']                 = '<p>Για περαιτέρω βοήθεια, επικοινωνήστε με την ομάδα υποστήριξής μας:</p><ul><li><strong>Ιστότοπος Υποστήριξης:</strong> <a href="%1$s">%1$s</a></li><li><strong>Αποθετήριο GitHub:</strong> <a href="%2$s" target="_blank" rel="noopener noreferrer">%2$s</a></li><li><strong>Επικοινωνία με την Υποστήριξη:</strong> <a href="mailto:%3$s">%3$s</a></li></ul>';
 $_['text_user_agent_any']          = 'Οποιοσδήποτε Πράκτορας Χρήστη';
 $_['text_allowed']                 = 'Επιτρέπεται: %s';
 $_['text_disallowed']              = 'Δεν επιτρέπεται: %s';
