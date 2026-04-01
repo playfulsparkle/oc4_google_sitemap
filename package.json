@@ -9,9 +9,14 @@
   "keywords": [
     "opencart",
     "opencart4",
+    "opencart-extension",
     "playfulsparkle",
     "google",
-    "sitemap"
+    "sitemap",
+    "google-sitemap",
+    "xml-sitemap",
+    "seo",
+    "multi-store"
   ],
   "author": "zsoltoroszlany82 <zsolt.oroszlany@playfulsparkle.com>",
   "license": "GPL",
